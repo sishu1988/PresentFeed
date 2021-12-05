@@ -11,6 +11,12 @@
 		161A95B7275D830600F15E90 /* PresentFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 161A95AC275D830600F15E90 /* PresentFeed.framework */; };
 		161A95BC275D830600F15E90 /* PresentFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A95BB275D830600F15E90 /* PresentFeedTests.swift */; };
 		161A95BD275D830600F15E90 /* PresentFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = 161A95AF275D830600F15E90 /* PresentFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		161A95C7275D832200F15E90 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A95C6275D832200F15E90 /* FeedItem.swift */; };
+		161A95CF275D839200F15E90 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A95CC275D839200F15E90 /* HTTPClientTests.swift */; };
+		161A95D2275D86E500F15E90 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A95D1275D86E500F15E90 /* XCTestCase+MemoryLeakTracking.swift */; };
+		161A95D4275D875000F15E90 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A95D3275D875000F15E90 /* HTTPClient.swift */; };
+		161A95D6275D875300F15E90 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A95D5275D875200F15E90 /* RemoteFeedLoader.swift */; };
+		161A95D8275D875400F15E90 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161A95D7275D875400F15E90 /* URLSessionHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,12 @@
 		161A95B0275D830600F15E90 /* PresentFeed.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = PresentFeed.docc; sourceTree = "<group>"; };
 		161A95B6275D830600F15E90 /* PresentFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		161A95BB275D830600F15E90 /* PresentFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentFeedTests.swift; sourceTree = "<group>"; };
+		161A95C6275D832200F15E90 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		161A95CC275D839200F15E90 /* HTTPClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
+		161A95D1275D86E500F15E90 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		161A95D3275D875000F15E90 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		161A95D5275D875200F15E90 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
+		161A95D7275D875400F15E90 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,8 @@
 		161A95AE275D830600F15E90 /* PresentFeed */ = {
 			isa = PBXGroup;
 			children = (
+				161A95D9275D88DB00F15E90 /* FeedFeature */,
+				161A95DA275D88F100F15E90 /* FeedAPI */,
 				161A95AF275D830600F15E90 /* PresentFeed.h */,
 				161A95B0275D830600F15E90 /* PresentFeed.docc */,
 			);
@@ -80,9 +94,37 @@
 		161A95BA275D830600F15E90 /* PresentFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				161A95DB275D88FE00F15E90 /* Helper */,
+				161A95CC275D839200F15E90 /* HTTPClientTests.swift */,
 				161A95BB275D830600F15E90 /* PresentFeedTests.swift */,
 			);
 			path = PresentFeedTests;
+			sourceTree = "<group>";
+		};
+		161A95D9275D88DB00F15E90 /* FeedFeature */ = {
+			isa = PBXGroup;
+			children = (
+				161A95C6275D832200F15E90 /* FeedItem.swift */,
+			);
+			path = FeedFeature;
+			sourceTree = "<group>";
+		};
+		161A95DA275D88F100F15E90 /* FeedAPI */ = {
+			isa = PBXGroup;
+			children = (
+				161A95D5275D875200F15E90 /* RemoteFeedLoader.swift */,
+				161A95D3275D875000F15E90 /* HTTPClient.swift */,
+				161A95D7275D875400F15E90 /* URLSessionHTTPClient.swift */,
+			);
+			path = FeedAPI;
+			sourceTree = "<group>";
+		};
+		161A95DB275D88FE00F15E90 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				161A95D1275D86E500F15E90 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				161A95D6275D875300F15E90 /* RemoteFeedLoader.swift in Sources */,
+				161A95D8275D875400F15E90 /* URLSessionHTTPClient.swift in Sources */,
+				161A95C7275D832200F15E90 /* FeedItem.swift in Sources */,
 				161A95B1275D830600F15E90 /* PresentFeed.docc in Sources */,
+				161A95D4275D875000F15E90 /* HTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +248,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				161A95D2275D86E500F15E90 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				161A95BC275D830600F15E90 /* PresentFeedTests.swift in Sources */,
+				161A95CF275D839200F15E90 /* HTTPClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +445,7 @@
 		161A95C4275D830600F15E90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -418,6 +467,7 @@
 		161A95C5275D830600F15E90 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
